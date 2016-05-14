@@ -20,10 +20,8 @@ namespace PeopleViewer
 
             IEnumerable people;
             people = peopleRepo.GetPeople();
-            foreach (var person in people)
-            {
-                PersonListBox.Items.Add(person);
-            }
+            PersonListBox.ItemsSource = people;
+
         }
 
         private void InterfaceFetchButton_Click(object sender, RoutedEventArgs e)
@@ -32,10 +30,8 @@ namespace PeopleViewer
 
             IEnumerable people;
             people = peopleRepo.GetPeople();
-            foreach (var person in people)
-            {
-                PersonListBox.Items.Add(person);
-            }
+            PersonListBox.ItemsSource = people;
+
         }
 
         private void ClearButton_Click(object sender, RoutedEventArgs e)
@@ -45,7 +41,7 @@ namespace PeopleViewer
 
         private void ClearListBox()
         {
-            PersonListBox.Items.Clear();
+            PersonListBox.ItemsSource = null;
         }
     }
 }
